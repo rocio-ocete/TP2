@@ -1,19 +1,25 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+import java.util.Scanner;
 
-/**
- *
- * @author Milagritos
- */
 public class ActualizacionStock {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static int actualizarStock(int stockActual, int cantidadVendida, int cantidadRecibida) {
+        return stockActual - cantidadVendida + cantidadRecibida;
     }
-    
+
+    public static void main(String[] args) {
+        try (Scanner input = new Scanner(System.in)) {
+            System.out.print("Ingrese el stock actual del producto: ");
+            int stockActual = input.nextInt();
+            
+            System.out.print("Ingrese la cantidad vendida: ");
+            int cantidadVendida = input.nextInt();
+            
+            System.out.print("Ingrese la cantidad recibida: ");
+            int cantidadRecibida = input.nextInt();
+            
+            int nuevoStock = actualizarStock(stockActual, cantidadVendida, cantidadRecibida);
+            
+            System.out.println("El nuevo stock del producto es: " + nuevoStock);
+        }
+    }
 }
